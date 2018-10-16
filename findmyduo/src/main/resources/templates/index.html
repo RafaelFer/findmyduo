@@ -19,39 +19,40 @@
         </div>
 
         <div align="center">
-            <a class="btn btn-lg btn-primary" data-toggle="collapse" href="#cadastroLivros" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Tenho Livros pra trocar!</a>
-            <a class="btn btn-lg btn-primary" data-toggle="collapse" href="#buscarLivros" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Quero ver os Livros!</a>
+            <a class="btn btn-lg btn-primary" data-toggle="collapse" href="#cadastroLivros" role="button"
+               aria-expanded="false" aria-controls="multiCollapseExample1">Tenho Livros pra trocar!</a>
+            <a class="btn btn-lg btn-primary" data-toggle="collapse" href="#buscarLivros" role="button"
+               aria-expanded="false" aria-controls="multiCollapseExample1">Quero ver os Livros!</a>
         </div>
     </div>
 
     <div id="parent">
         <div class="panel">
-            <div class="form-group">
-                <label for="sel1">Escolha a linha:</label>
-                <select class="form-control" id="mySelect" onchange="buscaEstacoes()">
+            <div class="form-group" id="buscarLivros">
+                <label for="linha">Escolha a linha:</label>
+                <select class="form-control" id="campoLinhas" onchange="buscaEstacoes()">
                     <option th:each="linha : ${linhas}"
                             th:value="${linha.id}"
                             th:text="${linha.nome}"/>
                 </select>
+
+                <label for="estacao">Escolha a estacão:</label>
+                <select class="form-control" id="campoEstacoes" onchange="">
+                    <option th:each="estacao : ${estacoes}"
+                            th:value="${estacao.id}"
+                            th:text="${estacao.nome}"/>
+                </select>
             </div>
         </div>
-        <div class="panel">
-            <div id="buscarLivros" class="collapse panel" data-parent="#parent">
-                Add your option
-            </div>
-        </div>
+
     </div>
 
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-
-<script>
-    function buscaEstacoes() {
-        alert("busca");
-    }
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+s
 
 </body>
 </html>
