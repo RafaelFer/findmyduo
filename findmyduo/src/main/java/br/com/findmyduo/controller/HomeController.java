@@ -4,6 +4,7 @@ import br.com.findmyduo.entidade.Linha;
 import br.com.findmyduo.repository.LinhaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import sun.misc.Contended;
 
@@ -17,16 +18,9 @@ public class HomeController {
     private LinhaRepository repository;
 
     @RequestMapping("/")
-    public String init(){
-        System.out.println("passou");
-
+    public String init(Model model){
         Iterable<Linha> linhas = repository.findAll();
-
-        for (Linha linha : linhas) {
-            System.out.println(linha.getNome());
-        }
-
-
+        model.addAttribute("linhas",linhas);
         return "index";
     }
 
