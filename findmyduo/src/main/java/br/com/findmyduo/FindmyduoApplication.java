@@ -5,11 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.sql.DataSource;
 
 @ComponentScan(basePackages={"br.com.findmyduo.controller"})
 @SpringBootApplication
+@EnableSwagger2 //this
 public class FindmyduoApplication {
 
 	public static void main(String[] args) {
@@ -26,4 +28,6 @@ public class FindmyduoApplication {
 		dataSource.setPassword("");
 		return dataSource;
 	}
+
+
 }
